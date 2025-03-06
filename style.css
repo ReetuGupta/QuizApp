@@ -1,0 +1,276 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    background-image: linear-gradient(135deg, #2c3e50, #4ca1af);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.main-container, .container{
+    width: 90%;
+    max-width: 650px;
+}
+
+.quiz-card, .container{
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+.quiz-card h1{
+    font-size: 2rem;
+    padding: .5rem;
+    margin-bottom: .5rem ; 
+}
+
+.quiz-card h3{
+    font-size: 1.3rem;
+    padding: .5rem;
+}
+
+.options-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: .6rem;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+.option{
+    font-size: 1.1rem;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.option:hover{
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
+}
+
+.option.selected{
+    background: #00c853;
+    color: #fff;
+    font-weight: bold;
+    transform: scale(1.1);
+}
+
+.container .question{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 20px;
+    color: white;
+    background: rgba(255, 255, 255, 0.4);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.container .choices{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.choice{
+    font-size: 1.2rem;
+    background: rgba(255, 255, 255, 0.4);
+    color: white;
+    padding: 12px;
+    margin: 8px 0;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.choice:hover{
+    background: rgba(214, 214, 231, 0.6);
+    transform: scale(1.05);
+}
+
+.choice.selected {
+    background: #0b44b6ad;
+    color: white;
+    font-weight: bold;
+    transform: scale(1.1);
+}
+
+.correct {
+    background-color: green;
+    color: white;
+    font-weight: bold;
+}
+
+.wrong {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+}
+
+.btn{
+    appearance: none;
+    background: #28a745;
+    border-radius: 6px;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.1rem; 
+    padding: 14px 24px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+    user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 5px, 
+                rgba(45, 35, 66, 0.3) 0 8px 14px -3px, 
+                rgba(214, 214, 231, 0.6) 0 -3px 0 inset;
+}
+  
+.btn:focus{
+    outline: none;
+    box-shadow: #D6D6E7 0 0 0 2px inset, 
+                rgba(45, 35, 66, 0.4) 0 2px 4px, 
+                rgba(45, 35, 66, 0.3) 0 7px 13px -3px, 
+                #D6D6E7 0 -3px 0 inset;
+}
+  
+.btn:hover{
+    box-shadow: rgba(45, 35, 66, 0.4) 0 5px 10px, 
+                rgba(45, 35, 66, 0.3) 0 9px 15px -3px, 
+                rgba(214, 214, 231, 0.7) 0 -3px 0 inset;
+    transform: translateY(-3px);
+    background: #218838;
+}
+  
+.btn:active{
+    box-shadow: rgba(45, 35, 66, 0.4) 0 3px 7px inset;
+    transform: translateY(2px);
+}
+
+.btn:disabled {
+    background: gray;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.nextBtn{
+    margin-top: 10px;
+    width: 60%;
+    text-align: center;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.scoreCard{
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    transition: color 0.5s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .quiz-card, .container {
+        padding: 20px;
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    .option {
+        font-size: 0.9rem;
+        padding: 10px 14px;
+    }
+
+    .choice {
+        font-size: 0.9rem;
+        width: 80%;
+    }
+
+    .correct {
+        background-color: #4CAF50 !important;
+        color: white;
+        font-weight: bold;
+    }
+    
+    .wrong {
+        background-color: #FF5252 !important;
+        color: white;
+        font-weight: bold;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        padding: 10px 16px;
+    }
+
+    .scoreCard {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .quiz-card, .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .option {
+        font-size: 0.8rem;
+        padding: 8px 12px;
+    }
+
+    .choice {
+        font-size: 0.8rem;
+    }
+
+    .correct {
+        background-color: #66BB6A !important;
+        color: white;
+        font-weight: bold;
+    }
+    
+    .wrong {
+        background-color: #FF7043 !important;
+        color: white;
+        font-weight: bold;
+    }
+
+    .btn {
+        font-size: 0.8rem;
+        padding: 8px 14px;
+    }  
+}

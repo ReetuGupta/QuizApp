@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="quiz-card">
+            <h1>Welcome to the Ultimate Quiz!</h1>
+
+            <h3>Select a Topic:</h3>
+            <div class="options-container" id="topicOptions">
+                <div class="option" data-value="gk">General Knowledge</div>
+                <div class="option" data-value="sci">Science & Computer</div>
+                <div class="option" data-value="maths">Mathematics</div>
+                <div class="option" data-value="entertain">Entertainment</div>
+                <div class="option" data-value="geo">Geography</div>
+                <div class="option" data-value="history">History</div>
+            </div>
+
+            <h3>Select Difficulty Level:</h3>
+            <div class="options-container" id="difficultyOptions">
+                <div class="option" data-value="easy">Easy</div>
+                <div class="option" data-value="medium">Medium</div>
+                <div class="option" data-value="hard">Hard</div>
+            </div>
+
+            <button class="btn" id="startQuizBtn" disabled>Start Quiz</button>
+        </div>
+    </div>
+
+    <div class="container" id="quizScreen" style="display: none;">
+        <div class="question"></div>
+        <div class="choices"></div>
+        <button class="btn nextBtn">Next</button>
+        <div class="scoreCard"></div>
+    </div>
+
+    <script src="/script.js"></script>
+</body>
+</html>
